@@ -19,6 +19,11 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    * a path of `/`.
    */
   def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index())
+    Ok(views.html.firstexample())
+  }
+
+  def printSum(first: Long, second: Long) = Action { implicit request: Request[AnyContent] =>
+    val sum = first + second
+    Ok(views.html.index(sum))
   }
 }
